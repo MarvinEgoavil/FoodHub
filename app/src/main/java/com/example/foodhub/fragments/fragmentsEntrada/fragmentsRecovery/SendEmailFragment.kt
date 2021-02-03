@@ -1,5 +1,6 @@
 package com.example.foodhub.fragments.fragmentsEntrada.fragmentsRecovery
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -42,6 +43,10 @@ class SendEmailFragment : Fragment() {
         btnSendEmail.setOnClickListener {
             mainActivity.openFragment(verifyFragment)
         }
+
+        mainActivity.window.statusBarColor=Color.rgb(212,119,62)
+
+
 
 
     }

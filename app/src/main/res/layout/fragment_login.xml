@@ -104,8 +104,10 @@
         app:layout_constraintTop_toBottomOf="@id/text_input_layout_pass"/>
 
     <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
         android:layout_marginTop="45dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -118,16 +120,16 @@
             android:layout_height="wrap_content"
             android:text="No estás Registrado? Regístrate aquí"
             android:textColor="@color/white"
-            android:fontFamily="@font/robotoregular"/>
+            android:fontFamily="@font/robotobold"/>
         <TextView
             android:id="@+id/TvOlvidaste"
             android:textSize="10sp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="¿Te olvidaste la contraseña?"
             android:textColor="@color/white"
-            android:fontFamily="@font/robotoregular"/>
+            android:fontFamily="@font/robotobold"/>
 
     </LinearLayout>
 

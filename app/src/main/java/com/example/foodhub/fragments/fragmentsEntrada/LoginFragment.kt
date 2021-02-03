@@ -1,17 +1,15 @@
 package com.example.foodhub.fragments.fragmentsEntrada
 
-import android.app.Activity
 import android.content.Context
-import android.graphics.Color
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.view.inputmethod.InputMethodManager
+import android.widget.Button
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.blogspot.atifsoftwares.animatoolib.Animatoo
-import com.example.foodhub.R
+import com.example.foodhub.activities.HomeActivity
 import com.example.foodhub.activities.MainActivity
 import com.example.foodhub.databinding.FragmentLoginBinding
 import com.example.foodhub.fragments.fragmentsEntrada.fragmentsRecovery.SendEmailFragment
@@ -21,17 +19,21 @@ class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
 
-    private lateinit var tvRegistrarse:TextView
-    private lateinit var tvOlvidaste:TextView
+    private lateinit var tvRegistrarse: TextView
+    private lateinit var tvOlvidaste: TextView
     private lateinit var mainActivity: MainActivity
 
     private lateinit var registerFragment: RegisterFragment
 
-    private lateinit var sendEmailFragment:SendEmailFragment
+    private lateinit var sendEmailFragment: SendEmailFragment
+
+    private lateinit var btnLogin: Button
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         binding = FragmentLoginBinding.inflate(layoutInflater)
         return binding.root
 
@@ -43,12 +45,14 @@ class LoginFragment : Fragment() {
 
         hideSoftKeyboard()
 
-        tvRegistrarse= binding.TvRegistrar
-        tvOlvidaste=binding.TvOlvidaste
+        tvRegistrarse = binding.TvRegistrar
+        tvOlvidaste = binding.TvOlvidaste
+        btnLogin = binding.btnLogin
 
-        mainActivity  = activity as MainActivity
+        mainActivity = activity as MainActivity
         registerFragment = RegisterFragment()
-        sendEmailFragment= SendEmailFragment()
+        sendEmailFragment = SendEmailFragment()
+
 
         tvRegistrarse.setOnClickListener {
             mainActivity.openFragment(registerFragment)
@@ -58,15 +62,21 @@ class LoginFragment : Fragment() {
         tvOlvidaste.setOnClickListener {
             mainActivity.openFragment(sendEmailFragment)
         }
-    }
 
+        binding.btnLogin.setOnClickListener {
+            val intent = Intent(this.context, HomeActivity::class.java)
+            startActivity(intent)
+            Animatoo.animateSlideLeft(this.context)
+
+        }
+
+    }
 
 
     private fun hideSoftKeyboard() {
         val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(view!!.getWindowToken(), 0)
+        imm.hideSoftInputFromWindow(requireView().getWindowToken(), 0)
     }
-
 
 
 }
