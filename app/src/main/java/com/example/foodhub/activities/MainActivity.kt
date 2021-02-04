@@ -17,10 +17,11 @@ import com.example.foodhub.fragments.fragmentsEntrada.fragmentsRecovery.SendEmai
 import com.example.foodhub.fragments.fragmentsEntrada.fragmentsRecovery.VerifyFragment
 
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
-    lateinit var loginFragment:LoginFragment
+    lateinit var loginFragment: LoginFragment
     lateinit var registerFragment: RegisterFragment
     lateinit var sendEmailFragment: SendEmailFragment
     lateinit var verifyFragment: VerifyFragment
@@ -39,22 +40,17 @@ class MainActivity : AppCompatActivity() {
 
 
         loginFragment = LoginFragment()
-        registerFragment= RegisterFragment()
-        sendEmailFragment= SendEmailFragment()
-        verifyFragment= VerifyFragment()
+        registerFragment = RegisterFragment()
+        sendEmailFragment = SendEmailFragment()
+        verifyFragment = VerifyFragment()
         resetPasswordFragment = ResetPasswordFragment()
-        congratulationsFragment= CongratulationsFragment()
+        congratulationsFragment = CongratulationsFragment()
 
         openFragment(loginFragment)
 
-
-
-
-
-
     }
 
-    private fun config () {
+    private fun config() {
         val window: Window = window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         window.statusBarColor = Color.TRANSPARENT;
@@ -69,9 +65,5 @@ class MainActivity : AppCompatActivity() {
         transaction.disallowAddToBackStack()
         transaction.commit()
     }
-
-
-
-
 
 }

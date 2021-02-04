@@ -22,8 +22,6 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-
         //Animacion de la imagen
         var animation = AnimationUtils.loadAnimation(this, R.anim.anim)
         binding.IVicono.startAnimation(animation)
@@ -35,7 +33,7 @@ class SplashActivity : AppCompatActivity() {
             startActivity(intent)
             Animatoo.animateSlideLeft(this)
             finish()
-        }, 300)
+        }, 3000)
 
 
         //Quitar el Status Bar de Splash Screen

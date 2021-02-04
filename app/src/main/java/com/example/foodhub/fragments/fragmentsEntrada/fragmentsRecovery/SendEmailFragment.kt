@@ -44,7 +44,7 @@ class SendEmailFragment : Fragment() {
             mainActivity.openFragment(verifyFragment)
         }
 
-        mainActivity.window.statusBarColor=Color.rgb(212,119,62)
+        // mainActivity.window.statusBarColor=Color.rgb(212,119,62)
 
 
 

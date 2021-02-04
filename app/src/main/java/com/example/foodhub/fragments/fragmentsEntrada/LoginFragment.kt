@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.blogspot.atifsoftwares.animatoolib.Animatoo
+import com.example.foodhub.R
 import com.example.foodhub.activities.HomeActivity
 import com.example.foodhub.activities.MainActivity
 import com.example.foodhub.databinding.FragmentLoginBinding
@@ -37,7 +38,6 @@ class LoginFragment : Fragment() {
         binding = FragmentLoginBinding.inflate(layoutInflater)
         return binding.root
 
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -55,7 +55,11 @@ class LoginFragment : Fragment() {
 
 
         tvRegistrarse.setOnClickListener {
-            mainActivity.openFragment(registerFragment)
+            val transaction = parentFragmentManager.beginTransaction()
+            transaction.setCustomAnimations(R.anim.slide_up_bueno,R.anim.slide_out_down)
+            transaction.replace(R.id.fragment_container, registerFragment)
+            transaction.disallowAddToBackStack()
+            transaction.commit()
 
         }
 

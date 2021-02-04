@@ -18,7 +18,10 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven {url 'https://jitpack.io'} // Animasi Slide Left Rigth
+        maven {url 'https://jitpack.io'
+             "https://dl.bintray.com/infideap2/Drawer-Behavior"
+        }
+
     }
 }
 

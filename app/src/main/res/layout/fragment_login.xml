@@ -92,16 +92,15 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#C9ED2A47"
-        app:shapeAppearanceOverlay="@style/redondo"
-        android:text="login"
+        android:layout_marginTop="28dp"
         android:backgroundTint="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/text_input_layout_pass"/>
+        android:text="login"
+        android:textColor="#C9ED2A47"
+        app:layout_constraintTop_toBottomOf="@id/text_input_layout_pass"
+        app:shapeAppearanceOverlay="@style/redondo"
+        tools:layout_editor_absoluteX="60dp" />
 
     <LinearLayout
         android:gravity="center"

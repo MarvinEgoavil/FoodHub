@@ -1,10 +1,13 @@
 package com.example.foodhub.activities
 
+import android.graphics.Color
 import android.os.Bundle
 import android.system.Os.close
 import android.system.Os.open
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.WindowManager
 import androidx.appcompat.app.ActionBarDrawerToggle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -19,9 +22,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.example.foodhub.R
 import com.example.foodhub.databinding.ActivityHomeBinding
 import com.example.foodhub.fragments.fragmentsHome.*
+import com.infideap.drawerbehavior.AdvanceDrawerLayout
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -34,13 +39,22 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var salirFragment: SalirFragment
     lateinit var userFragment: UserFragment
 
+    lateinit var drawer:AdvanceDrawerLayout
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityHomeBinding.inflate(layoutInflater)
-       setContentView(binding.root)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
+        config()
+
+
+        // Inicializando este libreria
+        drawer = binding.drawerLayout
+
+        drawer.useCustomBehavior(GravityCompat.START)
+        drawer.useCustomBehavior(GravityCompat.END)
         acercaFragment = AcercaFragment()
         configFragment = ConfigFragment()
         homeFragment = HomeFragment()
@@ -58,14 +72,14 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .setAction("Action", null).show()
         }
 
-
         //Creando el toogle del Drawer
         val toolbar = binding.incluyedLayout.toolbar
 
         setSupportActionBar(toolbar)
         var actionBar = supportActionBar
-        actionBar?.title = "Navigation Drawer"
+        actionBar?.title = "Food Hub"
 
+        //Creando el toogle del Drawer
         val drawerToggle: ActionBarDrawerToggle = object : ActionBarDrawerToggle(
             this,
             binding.drawerLayout,
@@ -74,6 +88,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             ((R.string.close))
         ) {
         }
+
+
 
         drawerToggle.isDrawerIndicatorEnabled = true
         binding.drawerLayout.addDrawerListener(drawerToggle)
@@ -84,36 +100,24 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.activity_main_drawer, menu)
-        return true
-    }
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_home -> {
-                homeFragment = HomeFragment()
                 openFragment(homeFragment)
             }
             R.id.nav_perfil -> {
-                userFragment = UserFragment()
                 openFragment(userFragment)
             }
             R.id.nav_configuracion -> {
-                configFragment = ConfigFragment()
                 openFragment(configFragment)
             }
             R.id.nav_nosotros -> {
-                acercaFragment = AcercaFragment()
                 openFragment(acercaFragment)
             }
             R.id.nav_politica -> {
-                politicaFragment = PoliticaFragment()
                 openFragment(politicaFragment)
             }
             R.id.nav_salir -> {
-                salirFragment = SalirFragment()
                 openFragment(salirFragment)
             }
         }
@@ -124,6 +128,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     fun openFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
+        transaction.setCustomAnimations(R.anim.slide_up,R.anim.slide_down)
         transaction.replace(R.id.fragment_container_home, fragment)
         transaction.disallowAddToBackStack()
         transaction.commit()
@@ -136,6 +141,12 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         } else {
             super.onBackPressed()
         }
+    }
+
+    fun config() {
+        // window.statusBarColor = Color.rgb(246,46,15)
+        window.setBackgroundDrawableResource(R.color.white)
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
     }
 
 
