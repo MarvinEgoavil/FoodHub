@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.activity.OnBackPressedCallback
 import com.example.foodhub.R
 import com.example.foodhub.activities.MainActivity
 import com.example.foodhub.databinding.FragmentResetPasswordBinding
+import com.example.foodhub.fragments.fragmentsEntrada.LoginFragment
 
 
 class ResetPasswordFragment : Fragment() {
@@ -17,8 +19,29 @@ class ResetPasswordFragment : Fragment() {
  private lateinit var congratulationsFragment: CongratulationsFragment
  private lateinit var btnResetPass:Button
 
+ private lateinit var verifyFragment: VerifyFragment
 
  private lateinit var mainActivity: MainActivity
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        activity?.onBackPressedDispatcher?.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+
+                verifyFragment = VerifyFragment()
+
+                val transaction = parentFragmentManager.beginTransaction()
+                transaction.setCustomAnimations(R.anim.right_in, R.anim.right_out)
+                transaction.replace(R.id.fragment_container, verifyFragment)
+                transaction.disallowAddToBackStack()
+                transaction.commit()
+            }
+        })
+
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,7 +61,11 @@ class ResetPasswordFragment : Fragment() {
         mainActivity = activity as MainActivity
 
         btnResetPass.setOnClickListener {
-            mainActivity.openFragment(congratulationsFragment)
+            val transaction = parentFragmentManager.beginTransaction()
+            transaction.setCustomAnimations(R.anim.left_in, R.anim.left_out)
+            transaction.replace(R.id.fragment_container, congratulationsFragment)
+            transaction.disallowAddToBackStack()
+            transaction.commit()
         }
 
     }

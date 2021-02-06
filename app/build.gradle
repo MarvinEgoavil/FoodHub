@@ -55,8 +55,18 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // API ANIMACIONN DRAWER
     implementation 'com.infideap.drawerbehavior:drawer-behavior:1.0.4'
 
     /* Animai Slide Left Rigth */
     implementation 'com.github.mohammadatif:Animatoo:master'
+
+    //gson
+   // implementation 'com.google.code.gson:gson:2.8.6'
+
+    //Retrofit 2
+    implementation 'com.squareup.retrofit2:retrofit:2.7.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.0'
+
 }

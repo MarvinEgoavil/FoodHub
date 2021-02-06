@@ -60,18 +60,21 @@ class LoginFragment : Fragment() {
             transaction.replace(R.id.fragment_container, registerFragment)
             transaction.disallowAddToBackStack()
             transaction.commit()
-
         }
 
         tvOlvidaste.setOnClickListener {
-            mainActivity.openFragment(sendEmailFragment)
+            val transaction = parentFragmentManager.beginTransaction()
+            transaction.setCustomAnimations(R.anim.left_in,R.anim.left_out)
+            transaction.replace(R.id.fragment_container, sendEmailFragment)
+            transaction.disallowAddToBackStack()
+            transaction.commit()
         }
 
         binding.btnLogin.setOnClickListener {
             val intent = Intent(this.context, HomeActivity::class.java)
             startActivity(intent)
             Animatoo.animateSlideLeft(this.context)
-
+            this.activity?.finishAffinity()
         }
 
     }

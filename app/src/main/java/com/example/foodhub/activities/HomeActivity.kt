@@ -1,32 +1,25 @@
 package com.example.foodhub.activities
 
-import android.graphics.Color
+import android.content.Intent
 import android.os.Bundle
-import android.system.Os.close
-import android.system.Os.open
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowManager
 import androidx.appcompat.app.ActionBarDrawerToggle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.navigation.NavigationView
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
+import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.example.foodhub.R
 import com.example.foodhub.databinding.ActivityHomeBinding
+import com.example.foodhub.fragments.fragmentsEntrada.LoginFragment
 import com.example.foodhub.fragments.fragmentsHome.*
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.navigation.NavigationView
+import com.google.android.material.snackbar.Snackbar
 import com.infideap.drawerbehavior.AdvanceDrawerLayout
+
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -36,10 +29,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var configFragment: ConfigFragment
     lateinit var homeFragment: HomeFragment
     lateinit var politicaFragment: PoliticaFragment
-    lateinit var salirFragment: SalirFragment
     lateinit var userFragment: UserFragment
-
-    lateinit var drawer:AdvanceDrawerLayout
+    lateinit var loginFragment: LoginFragment
+    lateinit var drawer: AdvanceDrawerLayout
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,8 +51,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         configFragment = ConfigFragment()
         homeFragment = HomeFragment()
         politicaFragment = PoliticaFragment()
-        salirFragment = SalirFragment()
         userFragment = UserFragment()
+        loginFragment = LoginFragment()
+
+
 
 
 
@@ -118,7 +112,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 openFragment(politicaFragment)
             }
             R.id.nav_salir -> {
-                openFragment(salirFragment)
+                val n = Intent(this, MainActivity::class.java)
+                startActivity(n)
+                Animatoo.animateDiagonal(this)
+                finishAffinity()
             }
         }
         binding.drawerLayout.closeDrawer(GravityCompat.START)
@@ -128,7 +125,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     fun openFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.setCustomAnimations(R.anim.slide_up,R.anim.slide_down)
+        transaction.setCustomAnimations(R.anim.slide_up, R.anim.slide_down)
         transaction.replace(R.id.fragment_container_home, fragment)
         transaction.disallowAddToBackStack()
         transaction.commit()
@@ -150,4 +147,36 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.toolbar, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            R.id.menu_toolbar_power -> {
+                alertDialogDismiss()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    fun alertDialogDismiss() {
+        val builder = AlertDialog.Builder(this)
+        builder.apply {
+            setTitle("Cerrar Sesión")
+            setMessage("¿Desea salir de la aplicación?")
+            setCancelable(true)
+            setPositiveButton("Sí") { dialog, which ->
+                finish()
+            }
+            setNegativeButton("No") { dialog, which ->
+                null
+            }
+            builder.show()
+        }
+
+    }
 }

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF4B2B"
     tools:context=".fragments.fragmentsEntrada.fragmentsRecovery.VerifyFragment">
 
 
@@ -58,9 +57,9 @@
         android:id="@+id/text_input_layout_nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="50dp"
-        android:layout_marginRight="100dp"
+        android:layout_marginRight="30dp"
         android:backgroundTint="@color/white"
         android:gravity="center"
         android:hint="Escribe aqui"
@@ -76,9 +75,9 @@
         android:id="@+id/btnVerificar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="140dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="140dp"
+        android:layout_marginRight="30dp"
         android:backgroundTint="@color/white"
         android:text="Verificar"
         android:textAllCaps="false"

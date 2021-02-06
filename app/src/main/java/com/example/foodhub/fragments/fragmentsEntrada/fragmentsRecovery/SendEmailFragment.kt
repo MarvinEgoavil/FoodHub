@@ -7,19 +7,45 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.activity.OnBackPressedCallback
 import com.example.foodhub.R
 import com.example.foodhub.activities.MainActivity
 import com.example.foodhub.databinding.FragmentSendEmailBinding
+import com.example.foodhub.fragments.fragmentsEntrada.LoginFragment
+import com.example.foodhub.fragments.fragmentsEntrada.RegisterFragment
 
 
 class SendEmailFragment : Fragment() {
 
-    private lateinit var binding:FragmentSendEmailBinding
+    private lateinit var binding: FragmentSendEmailBinding
 
     private lateinit var btnSendEmail: Button
     private lateinit var verifyFragment: VerifyFragment
 
     private lateinit var mainActivity: MainActivity
+
+    private lateinit var loginFragment:LoginFragment
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        activity?.onBackPressedDispatcher?.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+
+                loginFragment=LoginFragment()
+
+                mainActivity = activity as MainActivity
+                val transaction = parentFragmentManager.beginTransaction()
+                transaction.setCustomAnimations(R.anim.right_in, R.anim.right_out)
+                transaction.replace(R.id.fragment_container, loginFragment)
+                transaction.disallowAddToBackStack()
+                transaction.commit()
+            }
+        })
+
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,17 +62,19 @@ class SendEmailFragment : Fragment() {
 
         btnSendEmail = binding.btnSendEmail
 
-        verifyFragment= VerifyFragment()
+        verifyFragment = VerifyFragment()
 
         mainActivity = activity as MainActivity
 
         btnSendEmail.setOnClickListener {
-            mainActivity.openFragment(verifyFragment)
+            val transaction = parentFragmentManager.beginTransaction()
+            transaction.setCustomAnimations(R.anim.left_in, R.anim.left_out)
+            transaction.replace(R.id.fragment_container, verifyFragment)
+            transaction.disallowAddToBackStack()
+            transaction.commit()
         }
 
         // mainActivity.window.statusBarColor=Color.rgb(212,119,62)
-
-
 
 
     }

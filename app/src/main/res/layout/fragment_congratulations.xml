@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF4B2B"
-    tools:context=".fragments.fragmentsEntrada.fragmentsRecovery.VerifyFragment">
+    tools:context=".fragments.fragmentsEntrada.fragmentsRecovery.VerifyFragment"
+    >
 
 
     <LinearLayout
         android:id="@+id/LineaLayoutPrincipal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
         android:orientation="vertical"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -36,7 +36,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="30dp"
             android:src="@drawable/ic_star"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -46,7 +46,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="50dp"
             android:gravity="center"
             android:text="Tu password ha sido reseteado"
             android:textColor="@color/white"
@@ -59,7 +59,7 @@
         android:id="@+id/TvSatisfactoriamente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:fontFamily="@font/robotobold"
         android:gravity="center"
         android:text="Satisfactoriamente"
@@ -71,9 +71,9 @@
         android:id="@+id/btnContinuar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="140dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginRight="30dp"
         android:backgroundTint="@color/white"
         android:text="Continuar"
         android:textAllCaps="false"
