@@ -18,12 +18,9 @@ import com.example.foodhub.fragments.fragmentsEntrada.RegisterFragment
 class SendEmailFragment : Fragment() {
 
     private lateinit var binding: FragmentSendEmailBinding
-
     private lateinit var btnSendEmail: Button
     private lateinit var verifyFragment: VerifyFragment
-
     private lateinit var mainActivity: MainActivity
-
     private lateinit var loginFragment:LoginFragment
 
 

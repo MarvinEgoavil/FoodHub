@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.activity.OnBackPressedCallback
 import com.example.foodhub.R
+import com.example.foodhub.activities.HomeActivity
 import com.example.foodhub.activities.MainActivity
 import com.example.foodhub.databinding.FragmentCongratulationsBinding
 import com.example.foodhub.fragments.fragmentsEntrada.LoginFragment
@@ -51,12 +52,17 @@ class CongratulationsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         btnContinuar = binding.btnContinuar
         loginFragment = LoginFragment()
         mainActivity = activity as MainActivity
 
         btnContinuar.setOnClickListener {
-            mainActivity.openFragment(loginFragment)
+            val transaction = parentFragmentManager.beginTransaction()
+            transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
+            transaction.replace(R.id.fragment_container, loginFragment)
+            transaction.disallowAddToBackStack()
+            transaction.commit()
         }
     }
 }

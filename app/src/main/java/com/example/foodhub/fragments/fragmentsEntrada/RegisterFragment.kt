@@ -59,4 +59,7 @@ class RegisterFragment : Fragment() {
         var mainActivity: MainActivity = MainActivity()
         var loginFragment: LoginFragment = LoginFragment()
     }
+
+
+
 }
