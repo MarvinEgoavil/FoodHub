@@ -13,6 +13,7 @@ import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.example.foodhub.R
 import com.example.foodhub.databinding.ActivitySplashBinding
 
+@Suppress("DEPRECATION")
 class SplashActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashBinding
