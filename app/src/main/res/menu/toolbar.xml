@@ -4,8 +4,19 @@
 
 
     <item
-        android:id="@+id/menu_toolbar_power"
-        android:icon="@drawable/power2"
-        android:title="Apagar"
-        app:showAsAction="always"/>
+        android:id="@+id/iconletras"
+        android:fontFamily="@font/sweetshinedafont"
+        android:title="FoodHub"
+        android:icon="@drawable/ic_icono_letras"
+        app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/icon"
+        android:fontFamily="@font/sweetshinedafont"
+        android:title="FoodHub"
+        android:icon="@drawable/ic_icono_imagen"
+        app:showAsAction="always" />
+
+
 </menu>

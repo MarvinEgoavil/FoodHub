@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.FoodHub" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#F7472B</item>
-        <item name="colorPrimaryVariant">#F62E0F</item>
+        <item name="colorPrimary">#FF8001</item>
+        <item name="colorPrimaryVariant">#FF8001</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -56,4 +56,8 @@
     <style name="Theme.FoodHub.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.FoodHub.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
+
 </resources>

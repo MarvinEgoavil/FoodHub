@@ -1,5 +1,6 @@
 package com.example.foodhub.activities
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Window
@@ -50,6 +51,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun config() {
         val window: Window = window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)

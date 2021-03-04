@@ -7,13 +7,19 @@ import android.view.*
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.example.foodhub.R
 import com.example.foodhub.activities.HomeActivity
 import com.example.foodhub.activities.MainActivity
+import com.example.foodhub.api.RetrofitClient
 import com.example.foodhub.databinding.FragmentLoginBinding
 import com.example.foodhub.fragments.fragmentsEntrada.fragmentsRecovery.SendEmailFragment
+import com.example.foodhub.models.LoginResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class LoginFragment : Fragment() {
@@ -71,10 +77,56 @@ class LoginFragment : Fragment() {
         }
 
         binding.btnLogin.setOnClickListener {
-            val intent = Intent(this.context, HomeActivity::class.java)
-            startActivity(intent)
-            Animatoo.animateSlideLeft(this.context)
-            this.activity?.finishAffinity()
+
+            val email=binding.editTextEmail.text.toString().trim()
+            val pass=binding.editTextPassword.text.toString().trim()
+
+            if(email.isEmpty()) {
+                binding.editTextEmail.error = "Email Necesario"
+                binding.editTextEmail.requestFocus()
+               return@setOnClickListener
+            }
+
+                if(pass.isEmpty()) {
+                    binding.editTextEmail.error = "Password Necesario"
+                    binding.editTextEmail.requestFocus()
+                    return@setOnClickListener
+                }
+
+            if(email == "hola" && pass == "123") {
+                val intent = Intent(this.context, HomeActivity::class.java)
+                startActivity(intent)
+                Animatoo.animateSlideLeft(this.context)
+                this.activity?.finishAffinity()
+
+            }
+
+         /*    RetrofitClient.instance.loginUser(email,pass)
+                 .enqueue(object : Callback<LoginResponse> {
+                     override fun onResponse(
+                         call: Call<LoginResponse>,
+                         response: Response<LoginResponse>
+                     ) {
+                       if(!(response.body())?.error!!) {
+                           response
+
+                       }else {
+                           Toast.makeText(context,response.body()?.message,Toast.LENGTH_SHORT).show()
+                       }
+                     }
+
+                     override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                         Toast.makeText(context,t.message,Toast.LENGTH_SHORT).show()
+                     }
+
+
+                 }) */
+
+
+
+
+
+
         }
 
     }

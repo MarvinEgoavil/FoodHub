@@ -60,18 +60,13 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         openFragment(homeFragment)
 
-        val fab: FloatingActionButton = findViewById(R.id.fab)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
 
         //Creando el toogle del Drawer
         val toolbar = binding.incluyedLayout.toolbar
 
         setSupportActionBar(toolbar)
         var actionBar = supportActionBar
-        actionBar?.title = "Food Hub"
+        actionBar?.title = ""
 
         //Creando el toogle del Drawer
         val drawerToggle: ActionBarDrawerToggle = object : ActionBarDrawerToggle(
@@ -107,9 +102,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             R.id.nav_nosotros -> {
                 openFragment(acercaFragment)
-            }
-            R.id.nav_politica -> {
-                openFragment(politicaFragment)
             }
             R.id.nav_salir -> {
                 val n = Intent(this, MainActivity::class.java)
@@ -153,30 +145,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-        when (item.itemId) {
-            R.id.menu_toolbar_power -> {
-                alertDialogDismiss()
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
 
-    fun alertDialogDismiss() {
-        val builder = AlertDialog.Builder(this)
-        builder.apply {
-            setTitle("Cerrar Sesión")
-            setMessage("¿Desea salir de la aplicación?")
-            setCancelable(true)
-            setPositiveButton("Sí") { dialog, which ->
-                finish()
-            }
-            setNegativeButton("No") { dialog, which ->
-                null
-            }
-            builder.show()
-        }
-
-    }
 }
