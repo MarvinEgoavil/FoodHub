@@ -25,7 +25,6 @@ import retrofit2.Response
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
-
     private lateinit var tvRegistrarse: TextView
     private lateinit var tvOlvidaste: TextView
     private lateinit var mainActivity: MainActivity
@@ -88,8 +87,8 @@ class LoginFragment : Fragment() {
             }
 
                 if(pass.isEmpty()) {
-                    binding.editTextEmail.error = "Password Necesario"
-                    binding.editTextEmail.requestFocus()
+                    binding.editTextPassword.error = "Password Necesario"
+                    binding.editTextPassword.requestFocus()
                     return@setOnClickListener
                 }
 
@@ -134,7 +133,7 @@ class LoginFragment : Fragment() {
 
     private fun hideSoftKeyboard() {
         val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(requireView().getWindowToken(), 0)
+        imm.hideSoftInputFromWindow(requireView().windowToken, 0)
     }
 
 

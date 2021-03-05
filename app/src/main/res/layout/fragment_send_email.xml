@@ -27,9 +27,10 @@
             android:layout_marginLeft="15dp"
             android:fontFamily="@font/robtolight"
             android:gravity="center"
+            android:textStyle="bold"
             android:text="¿Te olvidaste la contraseña?"
-            android:textColor="@color/white"
-            android:textSize="40sp"
+            android:textColor="#FF8001"
+            android:textSize="24sp"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -50,11 +51,10 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Escribe el email asociado a esta cuenta, te lllegará un correo con un código."
-            android:textColor="@color/white" />
-
+            android:textColor="#FF8001" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:backgroundTint="@color/white"
+            android:backgroundTint="#FF8001"
             android:id="@+id/emailTextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -63,25 +63,26 @@
             android:layout_marginRight="30dp"
             android:gravity="center"
             android:hint="Email"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            app:boxStrokeColor="@color/white"
+            android:textColor="#FF8001"
+            android:textColorHint="#FF8001"
+            app:boxStrokeColor="#FF8001"
             app:endIconMode="clear_text"
             app:errorEnabled="true"
             app:layout_constraintTop_toBottomOf="@id/logoLlave"
-            app:prefixTextColor="@color/white" />
+            app:prefixTextColor="#FF8001" />
 
         <Button
+            android:layout_gravity="center"
             android:layout_marginTop="13dp"
             android:id="@+id/btnSendEmail"
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:backgroundTint="@color/white"
-            android:text="Enviar Email"
+            android:backgroundTint="#FF8001"
+            android:text="Enviar"
             android:textAllCaps="false"
-            android:textColor="#C9ED2A47"
+            android:textColor="@color/white"
             app:shapeAppearanceOverlay="@style/redondo" />
 
     </LinearLayout>

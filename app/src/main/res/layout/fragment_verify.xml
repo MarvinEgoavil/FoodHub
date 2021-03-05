@@ -26,7 +26,7 @@
             android:fontFamily="@font/robtolight"
             android:gravity="center"
             android:text="Verificación"
-            android:textColor="@color/white"
+            android:textColor="#FF8001"
             android:textSize="40sp"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,7 +48,7 @@
             android:layout_marginTop="40dp"
             android:gravity="center"
             android:text="Escribe el código de verificación que te llegó al correo"
-            android:textColor="@color/white"
+            android:textColor="#FF8001"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -60,12 +60,12 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="30dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="#FF8001"
         android:gravity="center"
         android:hint="Escribe aqui"
         android:maxLength="6"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="#FF8001"
+        android:textColorHint="#FF8001"
         app:counterEnabled="true"
         app:endIconMode="clear_text"
         app:errorEnabled="true"
@@ -73,15 +73,17 @@
 
     <Button
         android:id="@+id/btnVerificar"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="#FF8001"
         android:text="Verificar"
         android:textAllCaps="false"
-        android:textColor="#C9ED2A47"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_input_layout_nombre"
         app:shapeAppearanceOverlay="@style/redondo" />
 

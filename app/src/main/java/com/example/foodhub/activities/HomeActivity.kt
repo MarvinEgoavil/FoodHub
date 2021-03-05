@@ -117,7 +117,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     fun openFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.setCustomAnimations(R.anim.slide_up, R.anim.slide_down)
+     //   transaction.setCustomAnimations(R.anim.slide_up, R.anim.slide_down)
         transaction.replace(R.id.fragment_container_home, fragment)
         transaction.disallowAddToBackStack()
         transaction.commit()

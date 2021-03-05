@@ -55,10 +55,11 @@ class MainActivity : AppCompatActivity() {
     private fun config() {
         val window: Window = window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.statusBarColor = Color.TRANSPARENT;
+     //   window.statusBarColor = Color.TRANSPARENT;
+        window.statusBarColor = Color.BLACK
         window.navigationBarColor = ContextCompat.getColor(baseContext, R.color.black)
-        val background = this@MainActivity.resources.getDrawable(R.drawable.gradientesplash)
-        getWindow().setBackgroundDrawable(background)
+        // val background = this@MainActivity.resources.getDrawable(R.drawable.gradientesplash)
+       // getWindow().setBackgroundDrawable(background)
     }
 
     fun openFragment(fragment: Fragment) {

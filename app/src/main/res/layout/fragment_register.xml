@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.fragmentsEntrada.RegisterFragment"
-    android:background="@drawable/gradientesplash">
+    tools:context=".fragments.fragmentsEntrada.RegisterFragment">
 
     <TextView
         android:id="@+id/TvTitulo"
@@ -16,7 +15,7 @@
         android:fontFamily="@font/robotoblack"
         android:gravity="center"
         android:text="Registro"
-        android:textColor="@color/white"
+        android:textColor="#FF8001"
         android:textSize="50sp"
        app:layout_constraintTop_toTopOf="parent"/>
 
@@ -29,9 +28,9 @@
         android:layout_marginRight="20dp"
         android:hint="Nombre"
         app:endIconMode="clear_text"
-        android:textColorHint="@color/white"
-        app:boxStrokeColor="@color/white"
-        app:boxStrokeErrorColor="#FF0505"
+        android:textColorHint="#FF8001"
+        app:boxStrokeColor="#FF8001"
+        app:boxStrokeErrorColor="#FF8001"
         app:counterEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:counterMaxLength="25"
@@ -51,13 +50,12 @@
         android:id="@+id/text_input_layout_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:hint="Email"
         app:endIconMode="clear_text"
-        android:textColorHint="@color/white"
-        app:boxStrokeColor="@color/white"
+        android:textColorHint="#FF8001"
+        app:boxStrokeColor="#FF8001"
         app:boxStrokeErrorColor="#FF0505"
         app:counterEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -81,8 +79,8 @@
         android:layout_height="wrap_content"
 
         android:hint="Password"
-        app:boxStrokeColor="@color/white"
-        android:textColorHint="@color/white"
+        app:boxStrokeColor="#FF8001"
+        android:textColorHint="#FF8001"
         app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="@+id/text_input_layout_email"
         app:layout_constraintStart_toStartOf="@+id/text_input_layout_email"
@@ -102,8 +100,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:hint="Confirmar Password"
-        app:boxStrokeColor="@color/white"
-        android:textColorHint="@color/white"
+        app:boxStrokeColor="#FF8001"
+        android:textColorHint="#FF8001"
         app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="@+id/text_input_layout_email"
         app:layout_constraintStart_toStartOf="@+id/text_input_layout_email"
@@ -116,16 +114,18 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         android:id="@+id/btnEnviar"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:textColor="#C9ED2A47"
+        android:textColor="@color/white"
         app:shapeAppearanceOverlay="@style/redondo"
         android:text="Enviar"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="#FF8001"
         app:layout_constraintTop_toBottomOf="@id/text_input_layout_repass"/>
 
 

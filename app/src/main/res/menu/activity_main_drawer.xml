@@ -7,12 +7,12 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/perfil"
-            android:title="Mi información" />
+            android:icon="@drawable/ic__0146704541554126448"
+            android:title="Home" />
         <item
             android:id="@+id/nav_perfil"
-            android:icon="@drawable/bag"
-            android:title="Mis pedidos" />
+            android:icon="@drawable/perfil"
+            android:title="Mi información" />
     </group>
 
     <item android:title="Otros">
