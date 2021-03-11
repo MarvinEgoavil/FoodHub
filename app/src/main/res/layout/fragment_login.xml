@@ -49,8 +49,6 @@
         android:textColorHint="#FF8001"
         app:boxStrokeColor="#FF8001"
         app:boxStrokeErrorColor="#FF8001"
-        app:counterEnabled="true"
-        app:counterMaxLength="25"
         app:endIconMode="clear_text"
         app:errorEnabled="true"
         app:layout_constraintTop_toBottomOf="@+id/TvSubtitulo">
@@ -60,9 +58,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:maxLength="25" />
+           />
 
     </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_input_layout_pass"

@@ -34,7 +34,7 @@ class SplashActivity : AppCompatActivity() {
             startActivity(intent)
             Animatoo.animateSlideLeft(this)
             finish()
-        }, 300)
+        }, 3000)
 
 
         //Quitar el Status Bar de Splash Screen

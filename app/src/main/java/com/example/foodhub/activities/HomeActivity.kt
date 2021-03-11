@@ -41,7 +41,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         config()
 
-
         // Inicializando este libreria
         drawer = binding.drawerLayout
 
@@ -53,9 +52,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         politicaFragment = PoliticaFragment()
         userFragment = UserFragment()
         loginFragment = LoginFragment()
-
-
-
 
 
         openFragment(homeFragment)
@@ -78,16 +74,11 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         ) {
         }
 
-
-
         drawerToggle.isDrawerIndicatorEnabled = true
         binding.drawerLayout.addDrawerListener(drawerToggle)
         drawerToggle.syncState()
         binding.navView.setNavigationItemSelectedListener(this)
-
-
     }
-
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
