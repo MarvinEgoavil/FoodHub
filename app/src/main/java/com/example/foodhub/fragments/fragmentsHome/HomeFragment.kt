@@ -67,6 +67,9 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
         carousel.carouselType = CarouselType.BLOCK
         carousel.scaleOnScroll = true
         carousel.scalingFactor = 0.5f
+        carousel.showTopShadow =  false
+        carousel.showBottomShadow =  false
+        carousel.showNavigationButtons =  false
 
 
 // If you want auto slide, turn this feature on.
@@ -130,7 +133,7 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
                             )
                             val dataList: List<Product>
                             dataList = response.body()!!;
-                            if (dataList.size > 0) {
+                            if (dataList.isNotEmpty()) {
                                 homeAdapter = HomeAdapter(mainActivity, dataList)
                                 binding.containerMain.recyclerView.adapter = homeAdapter
                             }

@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Escribe el email asociado a esta cuenta, te lllegará un correo con un código."
+            android:text="Escribe el email asociado a esta cuenta, te llegará un correo con un código."
             android:textColor="#FF8001" />
 
         <androidx.appcompat.widget.AppCompatEditText

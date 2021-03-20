@@ -41,7 +41,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         config()
 
-        // Inicializando este libreria
+        // Inicializando esta libreria
+
         drawer = binding.drawerLayout
 
         drawer.useCustomBehavior(GravityCompat.START)
